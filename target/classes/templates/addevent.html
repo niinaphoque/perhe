@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Family members</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h2>Add a family member</h2>
+	<div>
+		<form th:object="${member}" th:action="@{save}" action="#" method="post">
+		  	<label for="member">Member</label>
+			<input type="text" id="member" th:field="*{member}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<label for="name">Name</label>
+			<input type="text" id="name" th:field="*{name}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<label for="time">Time</label>
+			<input type="text" id="time" th:field="*{time}" />
+		<div style="clear: both; display: block; height: 10px;"></div>
+			
+			
+			<input type="submit" value="Save"></input>
+		</form>
+	</div>
+</body>
+</html>

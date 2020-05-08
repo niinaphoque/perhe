@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Event information</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h2>Event information</h2>
+	<table>
+		<tr>
+			<th>Member</th>
+			<th>Name</th>
+			<th>Time</th>
+			
+		</tr>
+		<tr th:each = "perhe : ${members}">
+			<td th:text="${perhe.member}"></td>
+			<td th:text="${perhe.name}"></td>
+			<td th:text="${perhe.time}"></td>
+			
+			
+			<td><a th:href="@{/delete/{id}(id=${perhe.id})}">Delete</a></td>
+		
+	</table>
+	<a href="/add">Add an event</a>
+</body>

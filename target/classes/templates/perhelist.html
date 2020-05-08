@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Family information</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h2>Family members</h2>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Job</th>
+			<th>Hobby</th>
+			
+		</tr>
+		<tr th:each = "perhe : ${members}">
+			<td th:text="${perhe.name}"></td>
+			<td th:text="${perhe.job}"></td>
+			<td th:text="${perhe.hobby}"></td>
+			
+			
+			<td><a th:href="@{/delete/{id}(id=${perhe.id})}">Delete</a></td>
+		
+	</table>
+	<a href="/add">Add a member</a>
+</body>
